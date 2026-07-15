@@ -75,15 +75,15 @@
         <article class="info-card">
           <h3>핵심 요약</h3>
           <p>
-            삼성전자 무선사업부에서 2016년부터 근무 중이며, 정적 웹 구현과 인터랙션 설계를 기반으로
-            개인 프로필과 작은 게임 경험을 함께 제공하는 구성을 목표로 합니다.
+            삼성전자 무선사업부에서 2016년부터 근무 중이며, Android 애플리케이션과 framework 레이어,
+            그리고 사용자 화면을 함께 바라보는 작업에 익숙한 프로필로 정리했습니다.
           </p>
         </article>
         <article class="info-card">
           <h3>작업 방식</h3>
           <p>
-            기존 콘텐츠를 보존하면서 반응형 레이아웃, 접근성, 입력 흐름을 차례로 맞춥니다.
-            추정이 필요한 부분은 <span class="placeholder">[사람 확인 필요]</span>로 유지합니다.
+            Kotlin과 Java 중심의 Android 개발 관점, 그리고 phones, tablets, foldables까지 이어지는
+            적응형 화면 구성을 참고해 프로필과 게임 영역을 함께 조율합니다.
           </p>
         </article>
       </div>
@@ -96,14 +96,24 @@
       </div>
       <div class="timeline">
         <article class="timeline-item">
-          <p class="timeline-range">2016 - 현재</p>
-          <h3>삼성전자 무선사업부</h3>
-          <p>제품/서비스 업무 경험을 바탕으로 정리된 프로필과 인터랙션 중심 UI를 구성.</p>
+          <p class="timeline-range">2013 - 2018</p>
+          <h3>Framework 개발그룹</h3>
+          <p>Android framework 레이어의 기능과 구조를 다루며 제품 경험의 기반을 정리한 시기.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-range">2019 - 2022</p>
+          <h3>Basic Platform 개발그룹</h3>
+          <p>기본 플랫폼 영역에서 공통 동작과 안정성을 다루는 개발 경험을 축적.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-range">2023 - 현재</p>
+          <h3>One UI Core Lab</h3>
+          <p>Scrapbook, Edge, Homescreen, Good Lock 관련 영역을 포함해 사용자 접점 중심의 화면을 다룸.</p>
         </article>
         <article class="timeline-item">
           <p class="timeline-range">[사람 확인 필요]</p>
-          <h3>세부 프로젝트</h3>
-          <p>공개 가능한 대표 프로젝트와 역할은 추가 확인 후 보강.</p>
+          <h3>대표 프로젝트</h3>
+          <p>공개 가능한 세부 사례는 추가 확인 후 보강하고, 현재는 확인된 범위까지만 유지.</p>
         </article>
       </div>
     </section>
@@ -116,11 +126,11 @@
       <div class="content-grid">
         <article class="info-card">
           <h3>검증 중심 구현</h3>
-          <p>반응형 레이아웃, 입력 처리, 상태 전이, 배포 가능성을 작은 루프로 검증.</p>
+          <p>반응형 레이아웃, 입력 처리, 상태 전이, 배포 가능성을 작은 루프로 검증합니다.</p>
         </article>
         <article class="info-card">
           <h3>웹 상호작용</h3>
-          <p>모바일 버튼, 키보드 입력, 접근성 있는 내비게이션과 게임 상태 표현.</p>
+          <p>모바일 버튼, 키보드 입력, 접근성 있는 내비게이션과 게임 상태 표현을 함께 맞춥니다.</p>
         </article>
       </div>
     </section>
@@ -145,42 +155,98 @@
     <section class="section-shell" id="games" aria-labelledby="games-title">
       <div class="section-heading">
         <p class="eyebrow">Games</p>
-        <h2 id="games-title">지렁이 게임</h2>
+        <h2 id="games-title">지렁이 게임과 테트리스</h2>
       </div>
-      <div class="game-layout">
-        <div class="game-panel">
-          <div class="game-stats" aria-live="polite">
-            <div><span>점수</span><strong id="score">0</strong></div>
-            <div><span>최고 점수</span><strong id="high-score">0</strong></div>
-            <div><span>상태</span><strong id="game-status">준비</strong></div>
-          </div>
-          <canvas id="game-canvas" width="480" height="480" aria-label="지렁이 게임 보드" role="img" tabindex="0"></canvas>
-          <div class="game-toolbar">
-            <button class="button primary" id="start-btn" type="button">시작</button>
-            <button class="button secondary" id="pause-btn" type="button">일시정지</button>
-            <button class="button secondary" id="restart-btn" type="button">재시작</button>
-          </div>
-        </div>
+      <div class="game-tabs" role="tablist" aria-label="게임 선택">
+        <button class="game-tab is-active" type="button" data-game-tab="snake" aria-selected="true">지렁이 게임</button>
+        <button class="game-tab" type="button" data-game-tab="tetris" aria-selected="false">테트리스</button>
+      </div>
 
-        <div class="game-sidebar">
-          <div class="info-card">
-            <h3>조작</h3>
-            <p>방향키와 WASD로 이동하고, 모바일에서는 방향 버튼을 사용합니다.</p>
-          </div>
-          <div class="direction-pad" aria-label="모바일 방향 버튼">
-            <button class="pad-btn" data-dir="up" type="button">▲</button>
-            <div class="pad-row">
-              <button class="pad-btn" data-dir="left" type="button">◀</button>
-              <button class="pad-btn" data-dir="down" type="button">▼</button>
-              <button class="pad-btn" data-dir="right" type="button">▶</button>
+      <div class="game-stack">
+        <article class="game-stage is-active" data-game-panel="snake" aria-labelledby="snake-title">
+          <div class="game-layout">
+            <div class="game-panel">
+              <div class="game-panel-head">
+                <h3 id="snake-title">지렁이 게임</h3>
+                <p>방향키와 WASD로 이동하고, 모바일에서는 방향 버튼을 사용합니다.</p>
+              </div>
+              <div class="game-stats" aria-live="polite">
+                <div><span>점수</span><strong id="score">0</strong></div>
+                <div><span>최고 점수</span><strong id="high-score">0</strong></div>
+                <div><span>상태</span><strong id="game-status">준비</strong></div>
+              </div>
+              <canvas id="snake-canvas" width="480" height="480" aria-label="지렁이 게임 보드" role="img" tabindex="0"></canvas>
+              <div class="game-toolbar">
+                <button class="button primary" id="start-btn" type="button">시작</button>
+                <button class="button secondary" id="pause-btn" type="button">일시정지</button>
+                <button class="button secondary" id="restart-btn" type="button">재시작</button>
+              </div>
+            </div>
+
+            <div class="game-sidebar">
+              <div class="info-card">
+                <h3>규칙</h3>
+                <p>음식을 먹으면 길이가 늘고 점수가 올라갑니다. 벽이나 몸에 닿으면 게임 오버입니다.</p>
+                <p>반대 방향 전환은 막혀 있으며, 타이머는 한 번만 동작합니다.</p>
+              </div>
+              <div class="direction-pad" aria-label="모바일 방향 버튼">
+                <button class="pad-btn" data-snake-dir="up" type="button">▲</button>
+                <div class="pad-row">
+                  <button class="pad-btn" data-snake-dir="left" type="button">◀</button>
+                  <button class="pad-btn" data-snake-dir="down" type="button">▼</button>
+                  <button class="pad-btn" data-snake-dir="right" type="button">▶</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="info-card">
-            <h3>규칙</h3>
-            <p>음식을 먹으면 길이가 늘고 점수가 올라갑니다. 벽이나 몸에 닿으면 게임 오버입니다.</p>
-            <p>반대 방향 전환은 막혀 있으며, 타이머는 한 번만 동작합니다.</p>
+        </article>
+
+        <article class="game-stage" data-game-panel="tetris" aria-labelledby="tetris-title" hidden>
+          <div class="game-layout">
+            <div class="game-panel">
+              <div class="game-panel-head">
+                <h3 id="tetris-title">테트리스</h3>
+                <p>방향키와 WASD로 이동·회전하고, 모바일 버튼으로도 조작할 수 있습니다.</p>
+              </div>
+              <div class="game-stats" aria-live="polite">
+                <div><span>점수</span><strong id="tetris-score">0</strong></div>
+                <div><span>라인</span><strong id="tetris-lines">0</strong></div>
+                <div><span>레벨</span><strong id="tetris-level">1</strong></div>
+                <div><span>최고 점수</span><strong id="tetris-high-score">0</strong></div>
+              </div>
+              <canvas id="tetris-canvas" width="320" height="640" aria-label="테트리스 보드" role="img" tabindex="0"></canvas>
+              <div class="game-toolbar">
+                <button class="button primary" id="tetris-start-btn" type="button">시작</button>
+                <button class="button secondary" id="tetris-pause-btn" type="button">일시정지</button>
+                <button class="button secondary" id="tetris-restart-btn" type="button">재시작</button>
+              </div>
+            </div>
+
+            <div class="game-sidebar">
+              <div class="info-card">
+                <h3>규칙</h3>
+                <p>블록을 쌓아 가로줄을 채우면 줄이 사라지고 점수와 레벨이 올라갑니다.</p>
+                <p>게임 오버 후에는 재시작으로 새 판을 시작할 수 있습니다.</p>
+              </div>
+              <div class="direction-pad tetris-pad" aria-label="모바일 테트리스 버튼">
+                <div class="pad-row">
+                  <button class="pad-btn" data-tetris-action="rotate" type="button">⟳</button>
+                  <button class="pad-btn" data-tetris-action="drop" type="button">⤓</button>
+                </div>
+                <div class="pad-row">
+                  <button class="pad-btn" data-tetris-action="left" type="button">◀</button>
+                  <button class="pad-btn" data-tetris-action="down" type="button">▼</button>
+                  <button class="pad-btn" data-tetris-action="right" type="button">▶</button>
+                </div>
+              </div>
+              <div class="info-card">
+                <h3>조작</h3>
+                <p>왼쪽/오른쪽 이동, 아래로 빠르게 내리기, 위쪽 회전, 스페이스 하드 드롭을 지원합니다.</p>
+                <p>반대 조작 입력은 기본 충돌 검사로 막아 둡니다.</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   </main>

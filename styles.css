@@ -151,6 +151,38 @@ canvas {
   gap: 1rem;
 }
 
+.game-stack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.game-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.game-tab {
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.game-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.game-stage[hidden] {
+  display: none;
+}
+
 .hero {
   padding: 1.25rem;
 }
@@ -277,6 +309,11 @@ canvas {
   padding: 1rem;
 }
 
+.game-panel-head {
+  display: grid;
+  gap: 0.35rem;
+}
+
 .game-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -303,12 +340,20 @@ canvas {
   font-size: 1.05rem;
 }
 
-#game-canvas {
+#snake-canvas,
+#tetris-canvas {
   width: 100%;
-  aspect-ratio: 1;
   border: 1px solid #20304a;
   border-radius: var(--radius);
   background: linear-gradient(180deg, #101826, #0e1521);
+}
+
+#snake-canvas {
+  aspect-ratio: 1 / 1;
+}
+
+#tetris-canvas {
+  aspect-ratio: 1 / 2;
 }
 
 .game-toolbar {
@@ -328,6 +373,10 @@ canvas {
   display: grid;
   gap: 0.5rem;
   justify-items: center;
+}
+
+.tetris-pad .pad-row:first-child {
+  grid-template-columns: repeat(2, minmax(0, 3rem));
 }
 
 .pad-row {
