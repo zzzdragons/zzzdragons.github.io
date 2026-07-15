@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>송봉섭 | Professional Profile</title>
+  <meta name="description" content="송봉섭의 반응형 개인 프로페셔널 웹사이트와 지렁이 게임">
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
@@ -15,56 +16,171 @@
       <p class="eyebrow">Professional Profile</p>
       <a class="brand-name" href="#home">송봉섭</a>
     </div>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-      Menu
-    </button>
-    <nav class="site-nav" id="site-nav">
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
       <a href="#home">Home</a>
-      <a href="#profile">Profile</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
       <a href="#games">Games</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero" id="home">
+    <section class="hero section-shell" id="home">
       <div class="hero-copy">
         <p class="eyebrow">Personal site</p>
         <h1>반응형 개인 프로페셔널 웹사이트</h1>
         <p class="lede">
-          정적 HTML, CSS, JavaScript만으로 구성한 첫 번째 뼈대입니다.
-          이후 Games 메뉴에 Windows 스타일 지뢰 찾기 게임을 붙입니다.
+          정적 HTML, CSS, JavaScript만으로 구성한 프로필 사이트입니다.
+          공개 가능한 정보만 담고, 확인되지 않은 항목은 <span class="placeholder">[사람 확인 필요]</span>로 남깁니다.
         </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#games">Games 열기</a>
+          <a class="button secondary" href="#contact">연락처 보기</a>
+        </div>
       </div>
-      <dl class="profile-facts" id="profile">
-        <div>
-          <dt>이름</dt>
-          <dd>송봉섭</dd>
-        </div>
-        <div>
-          <dt>경력</dt>
-          <dd>삼성전자 무선사업부 2016~현재</dd>
-        </div>
-        <div>
-          <dt>학력</dt>
-          <dd>대학교 졸업</dd>
-        </div>
-        <div>
-          <dt>자격증</dt>
-          <dd>정보처리기사, 운전 면허증 1종 보통, 토익 890</dd>
-        </div>
-      </dl>
+
+      <aside class="hero-card" aria-labelledby="profile-title">
+        <p class="eyebrow">Profile</p>
+        <h2 id="profile-title">송봉섭</h2>
+        <dl class="profile-facts">
+          <div>
+            <dt>나이</dt>
+            <dd>38</dd>
+          </div>
+          <div>
+            <dt>학력</dt>
+            <dd>대학교 졸업</dd>
+          </div>
+          <div>
+            <dt>경력</dt>
+            <dd>삼성전자 무선사업부 2016~현재</dd>
+          </div>
+          <div>
+            <dt>자격증</dt>
+            <dd>정보처리기사, 운전 면허증 1종 보통, 토익 890</dd>
+          </div>
+        </dl>
+      </aside>
     </section>
 
-    <section class="section" id="games" aria-labelledby="games-title">
+    <section class="section-shell" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">소개</h2>
+      </div>
+      <div class="content-grid">
+        <article class="info-card">
+          <h3>핵심 요약</h3>
+          <p>
+            삼성전자 무선사업부에서 2016년부터 근무 중이며, 정적 웹 구현과 인터랙션 설계를 기반으로
+            개인 프로필과 작은 게임 경험을 함께 제공하는 구성을 목표로 합니다.
+          </p>
+        </article>
+        <article class="info-card">
+          <h3>작업 방식</h3>
+          <p>
+            기존 콘텐츠를 보존하면서 반응형 레이아웃, 접근성, 입력 흐름을 차례로 맞춥니다.
+            추정이 필요한 부분은 <span class="placeholder">[사람 확인 필요]</span>로 유지합니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <p class="eyebrow">Experience</p>
+        <h2 id="experience-title">경력</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <p class="timeline-range">2016 - 현재</p>
+          <h3>삼성전자 무선사업부</h3>
+          <p>제품/서비스 업무 경험을 바탕으로 정리된 프로필과 인터랙션 중심 UI를 구성.</p>
+        </article>
+        <article class="timeline-item">
+          <p class="timeline-range">[사람 확인 필요]</p>
+          <h3>세부 프로젝트</h3>
+          <p>공개 가능한 대표 프로젝트와 역할은 추가 확인 후 보강.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="research" aria-labelledby="research-title">
+      <div class="section-heading">
+        <p class="eyebrow">Research</p>
+        <h2 id="research-title">연구 및 관심사</h2>
+      </div>
+      <div class="content-grid">
+        <article class="info-card">
+          <h3>검증 중심 구현</h3>
+          <p>반응형 레이아웃, 입력 처리, 상태 전이, 배포 가능성을 작은 루프로 검증.</p>
+        </article>
+        <article class="info-card">
+          <h3>웹 상호작용</h3>
+          <p>모바일 버튼, 키보드 입력, 접근성 있는 내비게이션과 게임 상태 표현.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">연락처</h2>
+      </div>
+      <div class="content-grid">
+        <article class="info-card">
+          <h3>이메일</h3>
+          <p>[사람 확인 필요]</p>
+        </article>
+        <article class="info-card">
+          <h3>외부 링크</h3>
+          <p>[사람 확인 필요]</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="games" aria-labelledby="games-title">
       <div class="section-heading">
         <p class="eyebrow">Games</p>
-        <h2 id="games-title">지뢰 찾기 준비 영역</h2>
+        <h2 id="games-title">지렁이 게임</h2>
       </div>
-      <p class="section-copy">
-        이 영역은 다음 루프에서 Microsoft Windows 스타일 지뢰 찾기 게임으로 확장합니다.
-      </p>
-      <div class="game-placeholder" role="status" aria-live="polite">
-        게임 화면은 아직 구현하지 않았습니다.
+      <div class="game-layout">
+        <div class="game-panel">
+          <div class="game-stats" aria-live="polite">
+            <div><span>점수</span><strong id="score">0</strong></div>
+            <div><span>최고 점수</span><strong id="high-score">0</strong></div>
+            <div><span>상태</span><strong id="game-status">준비</strong></div>
+          </div>
+          <canvas id="game-canvas" width="480" height="480" aria-label="지렁이 게임 보드" role="img" tabindex="0"></canvas>
+          <div class="game-toolbar">
+            <button class="button primary" id="start-btn" type="button">시작</button>
+            <button class="button secondary" id="pause-btn" type="button">일시정지</button>
+            <button class="button secondary" id="restart-btn" type="button">재시작</button>
+          </div>
+        </div>
+
+        <div class="game-sidebar">
+          <div class="info-card">
+            <h3>조작</h3>
+            <p>방향키와 WASD로 이동하고, 모바일에서는 방향 버튼을 사용합니다.</p>
+          </div>
+          <div class="direction-pad" aria-label="모바일 방향 버튼">
+            <button class="pad-btn" data-dir="up" type="button">▲</button>
+            <div class="pad-row">
+              <button class="pad-btn" data-dir="left" type="button">◀</button>
+              <button class="pad-btn" data-dir="down" type="button">▼</button>
+              <button class="pad-btn" data-dir="right" type="button">▶</button>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3>규칙</h3>
+            <p>음식을 먹으면 길이가 늘고 점수가 올라갑니다. 벽이나 몸에 닿으면 게임 오버입니다.</p>
+            <p>반대 방향 전환은 막혀 있으며, 타이머는 한 번만 동작합니다.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
